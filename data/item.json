@@ -1,0 +1,37 @@
+[
+    {
+        "itemName" : "Nike Air",
+        "price" : 9000000,
+        "imageURL" : "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/af407608-9bbd-4140-8f5a-e1a24284574d/air-jordan-6-retro-shoes-4m3b9d.png",
+        "description" : "This is the newest product from our factory, made by the finest tailor of ours!",
+        "stock" : 80,
+        "UserId" : 1
+    },
+
+    {
+        "itemName" : "Jordan",
+        "price" : 9000000,
+        "imageURL" : "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/af407608-9bbd-4140-8f5a-e1a24284574d/air-jordan-6-retro-shoes-4m3b9d.png",
+        "description" : "Men's basketball shoes",
+        "stock" : 20,
+        "UserId" : 1
+    },
+
+    {
+        "itemName" : "Jordan Women X Series",
+        "price" : 3500000,
+        "imageURL" : "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/aade3221-a084-4fcb-ba51-3ac46dfe2069/air-jordan-xxxvii-low-basketball-shoes-Z2glMj.png",
+        "description" : "Women's basketball shoes",
+        "stock" : 18,
+        "UserId" : 2
+    },
+
+    {
+        "itemName" : "Macbook Air 2022",
+        "price" : 9000000,
+        "imageURL" : "https://cdn.eraspace.com/media/catalog/product/m/a/macbook_air_m2_midnight_pdp_image_position-1__id_3.jpg",
+        "description" : "Macbook air released on 2022",
+        "stock" : 200,
+        "UserId" : 1
+    }
+]
