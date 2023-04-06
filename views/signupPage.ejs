@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('_flowBiteHeadLink') %>
-    <title>Document</title>
+        <title>Document</title>
 </head>
 
 <body>
@@ -32,25 +32,31 @@
                     <ul
                         class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <a href="#"
+                            <a href="/"
                                 class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                                 aria-current="page">Home</a>
                         </li>
                         <li>
-                            <a href="/signup"
-                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign Up</a>
+                            <a href="/"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </section>
-    
     <section style="display: flex; justify-content: center; align-items: center;">
         <div
             class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <form class="space-y-6" method="post" action="/validateAccount">
-                <h5 class="text-xl font-medium text-gray-900 dark:text-white">Log-in to our platform</h5>
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
+                <div>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                        Name</label>
+                    <input type="text" name="name" id="name"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                        placeholder="Muhammad Agung Herucokro" required>
+                </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
                         email</label>
@@ -103,10 +109,11 @@
                     class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
                     to your account</button>
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                    Are You a New Member? <a href="/signup" class="text-blue-700 hover:underline dark:text-blue-500">Sign-up Now</a>
+                    Already have account? <a href="/login" class="text-blue-700 hover:underline dark:text-blue-500">Login Now</a>
                 </div>
             </form>
         </div>
+    </section>
     </section>
     <%- include('_flowBiteBodyLink') %>
 </body>

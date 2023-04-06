@@ -11,14 +11,51 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasMany(models.Item)
-      User.hasOne(models.wallet)
+      User.hasOne(models.Wallet)
     }
   }
   User.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    role: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate : {
+        notNull: {
+          msg : `masa kamu ga ada nama, ga aqiqah yah chuaks!`
+        },
+        notEmpty: true
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate : {
+        notNull: {
+          msg : `zaman gini ga ada email???`
+        },
+        notEmpty: true
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate : {
+        notNull: {
+          msg : `masa kamu ga ada password, ga kepikiran yah? kasihan...`
+        },
+        notEmpty: true
+      }
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate : {
+        notNull: {
+          msg : `pilih salah satu wahai budiman!`
+        },
+        notEmpty: true
+      }
+    }
   }, {
     sequelize,
     modelName: 'User',
