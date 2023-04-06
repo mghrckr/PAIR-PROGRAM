@@ -10,7 +10,7 @@ class Controller {
     }
     static validateAccount(req, res) {
         const { name, email, password, role } = req.body
-        // console.log(req.body, name, email, password, role);
+        console.log(req.body, name, email, password, role);
         if (name) { //the form that has name is signup form, by having name it means he try to signUp
             if (role === "admin") {
                 User.create({
@@ -46,9 +46,10 @@ class Controller {
                 where: { email, password }
             })
                 .then((data) => {
-                    if (data.role === "buyer") {
+                    // console.log(data, "masuk di login");
+                    if (data.role === "buyer" || data.role === "Buyer") {
                         res.redirect(`/user/buyer/${data.id}`)
-                    } else if (data.role === "admin") {
+                    } else if (data.role === "admin" || data.role === "Admin") {
                         res.redirect(`/user/admin/${data.id}`)
                     }
                 })
@@ -61,7 +62,9 @@ class Controller {
 
     }
     static buyerPage(req, res) {
-        Item.findAll()
+        User.findAll({
+            include : Item
+        })
             .then((data) => {
                 // res.send(data)
                 res.render("buyer-page", { data })
@@ -72,13 +75,16 @@ class Controller {
     }
 
     static adminPage(req, res) {
-        Item.findAll()
+        User.findAll({
+            include : Item
+        })
             .then((data) => {
+                // res.send(data)
                 res.render("admin-page", { data })
             })
             .catch((err) => {
-                res.send(`ga masuk cuy`)
-            })
+                res.status(500).send(`Error occurred: ${err}`);
+            });
     }
 }
 
