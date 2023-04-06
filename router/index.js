@@ -8,6 +8,8 @@ const router = express.Router()
 router.get('/login', Controller.loginPage)
 router.get('/signup', Controller.signupPage)
 router.post('/validateAccount', Controller.validateAccount)
+router.get('/addToCart/:itemId', Controller.addToCart)
+
 
 //menampilkan landing page berisi login dan sign-in
 router.use('/user/buyer/:buyerId', routerBuyer)

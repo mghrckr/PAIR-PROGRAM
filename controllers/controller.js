@@ -63,7 +63,7 @@ class Controller {
     }
     static buyerPage(req, res) {
         User.findAll({
-            include : Item
+            include: Item
         })
             .then((data) => {
                 // res.send(data)
@@ -76,7 +76,7 @@ class Controller {
 
     static adminPage(req, res) {
         User.findAll({
-            include : Item
+            include: Item
         })
             .then((data) => {
                 // res.send(data)
@@ -85,6 +85,39 @@ class Controller {
             .catch((err) => {
                 res.status(500).send(`Error occurred: ${err}`);
             });
+    }
+
+    static addToCart(req, res) {
+        const { id } = req.params
+        console.log(id);
+    }
+
+    static editItem(req, res) {
+
+    }
+
+    static deleteItem(req, res) {
+        const id = req.params.itemId
+        let nama
+        Item.findOne({
+            where: {
+                id
+            }
+        })
+            .then((data) => {
+                nama = data.itemName
+                return Item.destroy({
+                    where: {
+                        id
+                    }
+                })
+            })
+            .then((data) => {
+                res.redirect(`/user/admin/${id}?name=${nama}`)
+            })
+            .catch((err) => {
+                res.send(err)
+            })
     }
 }
 
